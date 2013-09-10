@@ -26,9 +26,10 @@ get '/auth' do
   erb :index
 end
 
-post '/tweet' do
+post '/:user_id/tweet' do
   @msg = params['message']
-  Twitter.update(@msg)
+  user = User.find(params[:user_id])
+  user.tweet(@msg)
 
   erb :_confirm, layout: false
 end
