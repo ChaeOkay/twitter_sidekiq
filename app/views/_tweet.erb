@@ -1,0 +1,22 @@
+<div class="container">
+  <form id="tweetas" method="post" action="/tweet">
+    <fieldset>
+
+      <div class="row">
+        <p>Tweet as @<%= @user.username %></p>
+        <div class="small-10">
+          <textarea name="message" rows="2" cols="70" placeholder="Message"></textarea>
+        </div>
+
+        </br>
+        <div class="small-1">
+          <input type="submit" value="Tweet">
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div>
+
+<div id="confirmation" class="container">
+</div>

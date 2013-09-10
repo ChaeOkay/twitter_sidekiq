@@ -12,6 +12,7 @@ get '/sign_out' do
   redirect '/'
 end
 
+require 'pry'
 get '/auth' do
   # the `request_token` method is defined in `app/helpers/oauth.rb`
   @access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
@@ -19,7 +20,15 @@ get '/auth' do
   session.delete(:request_token)
 
   # at this point in the code is where you'll need to create your user account and store the access token
+  @user = User.find_by_username(@access_token.params[:screen_name])
+  User.log_new(@access_token) unless @user.nil?
 
   erb :index
+end
 
+post '/tweet' do
+  @msg = params['message']
+  Twitter.update(@msg)
+
+  erb :_confirm, layout: false
 end
