@@ -4,13 +4,13 @@ class TweetWorker
 # require 'pry'
   def perform(tweet_id)
     # binding.pry
-    tweet = Tweet.find(tweet_id)
-    user = tweet.user
-
     puts "*" * 80
     puts "starting #{jid}"
     puts "sleeping...."
-    sleep rand(10)
+
+        sleep rand(10)
+    tweet = Tweet.find(tweet_id)
+    user = tweet.user
 
     env = YAML.load_file(APP_ROOT.join('config', 'twitter.yaml'))
     tweeter = Twitter.configure do |config|
