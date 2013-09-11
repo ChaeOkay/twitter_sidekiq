@@ -27,6 +27,13 @@ post '/:user_id/tweet' do
   @msg = params['message']
   user = User.find(params[:user_id])
   user.tweet(@msg)
+  redirect '/status'
+end
 
-  erb :_confirm, layout: false
+get '/status' do
+
+  stats = Sidekiq::Stats.new
+  @failed = stats.failed
+  @processed = stats.processed
+  erb :_bkgnd, layout: false
 end

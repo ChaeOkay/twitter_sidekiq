@@ -20,6 +20,9 @@ gem 'oauth'
 gem 'twitter'
 gem 'pry'
 
+gem 'sidekiq'
+gem 'redis'
+
 group :test do
   gem 'faker'
   gem 'rspec'
