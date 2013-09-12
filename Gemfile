@@ -22,6 +22,7 @@ gem 'pry'
 
 gem 'sidekiq'
 gem 'redis'
+gem 'rspec'
 
 group :test do
   gem 'faker'
