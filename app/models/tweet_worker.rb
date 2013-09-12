@@ -14,8 +14,6 @@ class TweetWorker
 
     env = YAML.load_file(APP_ROOT.join('config', 'twitter.yaml'))
     tweeter = Twitter.configure do |config|
-      config.consumer_key = env['TWITTER_KEY']
-      config.consumer_secret = env['TWITTER_SECRET']
       config.oauth_token = user.oauth_token
       config.oauth_token_secret = user.oauth_secret
     end
