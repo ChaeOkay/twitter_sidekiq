@@ -49,3 +49,9 @@ Twitter.configure do |config|
   config.consumer_key = ENV['TWITTER_KEY']
   config.consumer_secret = ENV['TWITTER_SECRET']
 end
+
+ENV["REDISTOGO_URL"] = 'redis://username:password@my.host:6389'
+REDIS.configure do
+  uri = URI.parse(ENV["REDISTOGO_URL"])
+  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+end
