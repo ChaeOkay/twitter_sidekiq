@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
                         oauth_secret: token.secret)
   end
 
-# require 'pry'
   def tweet(msg)
     tweet = Tweet.create!(:status => msg)
     self.tweets << tweet
