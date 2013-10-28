@@ -1,6 +1,8 @@
-$(function(){
-  console.log('in the function')
-    $('#tweetas').submit(function(e){
+function Tweet() {
+}
+
+Tweet.prototype.showResponse = function(){
+  $('#tweetas').submit(function(e){
       e.preventDefault();
       var $formUrl = '/' + $('#user_id').val() + '/tweet'
 
@@ -16,6 +18,11 @@ $(function(){
         console.log(jqXHR + " " + errorMsg);
       });
     })
+}
+
+$(function(){
+  esmePage = new Tweet()
+  esmePage.showResponse()
 })
 
 
