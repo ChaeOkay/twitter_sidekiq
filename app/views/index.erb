@@ -2,18 +2,17 @@
   <h1>Tweet as Esme</h1>
 
   <% if @user %>
-  <div>
-      <p>
-        <button><a href="/sign_out">Sign Out</a></button>
-      </p>
-    </div>
+    <p>
+      <button><a href="/sign_out">Sign Out</a></button>
+    </p>
     <%= erb :_tweet %>
 
   <% else %>
-    <div class="container">
-      <h5>Use my credentials:</h5>
+    <div class="credentials"
+    <p>
       Twitter Username: <b>@mycatesme</b></br>
       Twitter Password: <b>mycatesme1</b></br>
-    </div>
+    </p>
+  </div>
     <button><a href="/sign_in">Sign In with Twitter</a></button>
   <% end %>

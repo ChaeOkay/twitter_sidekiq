@@ -11,7 +11,6 @@ get '/sign_out' do
   redirect '/'
 end
 
-require 'pry'
 get '/auth' do
   @access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
   session.delete(:request_token)
