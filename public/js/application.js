@@ -20,9 +20,17 @@ Tweet.prototype.showResponse = function(){
     })
 }
 
+Tweet.prototype.showLink = function(){
+  $(submit).on('click', function(){
+    $('.linkToTweet').css('display', 'none')
+    $('.linkToTweet').delay(4000).fadeIn(1000)
+  })
+}
+
 $(function(){
   esmePage = new Tweet()
   esmePage.showResponse()
+  esmePage.showLink()
 })
 
 
