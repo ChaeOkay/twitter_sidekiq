@@ -7,6 +7,9 @@ button a {
   color: black;
 }
 
+.signout {
+  padding-top: 20px;
+}
 
 .container {
   margin: 20px auto;
@@ -29,6 +32,3 @@ button a {
   background-color: rgb(235, 235, 235);
 }
 
-.signout {
-  padding-top: 20px;
-}
