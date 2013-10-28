@@ -6,9 +6,9 @@
   </div>
 
   <% if @user %>
-    <p>
+    <div class="signout">
       <button><a href="/sign_out">Sign Out</a></button>
-    </p>
+    <div>
     <%= erb :_tweet %>
 
   <% else %>
