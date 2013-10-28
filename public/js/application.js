@@ -21,7 +21,7 @@ Tweet.prototype.showResponse = function(){
 }
 
 Tweet.prototype.showLink = function(){
-  $(submit).on('click', function(){
+  $('#tweetbtn').on('click', function(){
     $('.linkToTweet').css('display', 'none')
     $('.linkToTweet').delay(4000).fadeIn(1000)
   })
