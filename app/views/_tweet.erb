@@ -1,23 +1,22 @@
-<div class="container">
-  <form id="tweetas" method="post" action="/<%= @user.id %>/tweet">
-    <input id="user_id" type="hidden" value='<%= @user.id %>' >
-    <fieldset>
 
-      <div class="row">
-        <p>Tweeting as <b>@<%= @user.username %></b></p>
-        <div class="small-10">
-          <textarea name="message" rows="2" cols="70" placeholder="Message"></textarea>
-        </div>
+<form id="tweetas" method="post" action="/<%= @user.id %>/tweet">
+  <input id="user_id" type="hidden" value='<%= @user.id %>' >
+  <fieldset>
 
-        </br>
-        <div class="small-1">
-          <input type="submit" class='button' value="Tweet">
-        </div>
+    <div class="row">
+      <p>Tweeting as <b>@<%= @user.username %></b></p>
+      <div class="small-10">
+        <textarea name="message" rows="2" cols="70" placeholder="Message"></textarea>
       </div>
 
-    </fieldset>
-  </form>
-</div>
+      </br>
+      <div class="small-1">
+        <input type="submit" class='button' value="Tweet">
+      </div>
+    </div>
 
-<div id="confirmation" class="container">
+  </fieldset>
+</form>
+
+<div id="confirmation">
 </div>
